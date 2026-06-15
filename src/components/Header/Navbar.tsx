@@ -4,8 +4,10 @@ import { Link } from "react-router-dom"
 const NavBar = () => {
   return (
     <>
-     
-     <div className="bg-orange-500 text-white flex items-center p-5">
+     <div>
+
+       
+     <div className="bg-orange-400 text-white flex items-center p-5">
         <div className="flex items-center gap-3 pl-5">
          <p>
              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -21,21 +23,21 @@ const NavBar = () => {
         <div className=" flex mt-5 pb-6">
             <div className="flex items-center gap-7 ml-7.5">
                 <img src="/images/logo.png" alt="" />
-                <p className="bg-linear-to-r from-orange-500 to-red-600 bg-clip-text text-transparent text-[30px] font-medium">Minimal Shopping</p>
+                <p className="bg-linear-to-r from-orange-500 to-red-500 bg-clip-text text-transparent text-[30px] font-medium">Minimal Shopping</p>
             </div>
 
 
             <div className="flex items-center justify-between flex-1">
                 <ul className="flex ml-12 gap-7">
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/products">Products</Link></li>
-                    <li>What’s New</li>
-                    <li>Delivery</li>
+                    <li className="hover:text-gray-400 transition"><Link to="/">Home</Link></li>
+                    <li className="hover:text-gray-400 transition"><Link to="/products">Products</Link></li>
+                    <li className="cursor-pointer hover:text-gray-400 transition">What’s New</li>
+                    <li className="cursor-pointer hover:text-gray-400 transition">Delivery</li>
                 </ul>
 
 
                 <ul className="flex gap-7 mr-11">
-                    <li className="flex items-center gap-2.5">
+                    <li className="flex items-center gap-2.5 cursor-pointer hover:text-gray-400 transition">
                     <span>
                         <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15 17V15.2222C15 14.2792 14.6313 13.3748 13.9749 12.708C13.3185 12.0412 12.4283 11.6666 11.5 11.6666H4.5C3.57174 11.6666 2.6815 12.0412 2.02513 12.708C1.36875 13.3748 1 14.2792 1 15.2222V17" stroke="black" stroke-opacity="0.75" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -43,11 +45,13 @@ const NavBar = () => {
                         </svg>
                     </span>
                         Account</li>
-                    <li>Cart</li>
+                    <li className="cursor-pointer hover:text-gray-400 transition">Cart</li>
                 </ul>
             </div>
         </div>
       </div>
+
+     </div>
 
 
     
