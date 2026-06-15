@@ -1,5 +1,23 @@
 @import "tailwindcss";
 
+
+
+@font-face {
+  font-family: "outfit";
+  src: url("/fonts/outfit-v15-latin-regular.woff2") format("woff2"),
+      
+}
+
+body{
+    font-family: outfit;
+}
+
+
 .container{
     width: 1426px;
+    margin: 0 auto;
+    background-color: #e7e7e7a8;
+    color: rgba(0, 0, 0, 0.712);
+    
 }
+

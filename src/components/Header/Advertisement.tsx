@@ -2,7 +2,13 @@
 
 const Advertisement = () => {
   return (
-    <div>Advertisement</div>
+    <>
+    
+    <div className="container">
+        <img className="ml-auto mr-auto" src="/images/baner.png" alt="" />
+    </div>
+    
+    </>
   )
 }
 
