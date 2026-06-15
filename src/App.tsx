@@ -1,5 +1,6 @@
 
 
+import  Router  from './routes/Router'
 import './App.css'
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
 
   return (
     <>
-      
+      <Router/>
     </>
   )
 }
