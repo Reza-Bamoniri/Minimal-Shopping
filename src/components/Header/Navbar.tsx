@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 
 
-const NavBar = () => {
+const NavBar = ({onOpenCartModal}) => {
   return (
     <>
      <div>
@@ -45,7 +45,7 @@ const NavBar = () => {
                         </svg>
                     </span>
                         Account</li>
-                    <li className="cursor-pointer hover:text-gray-400 transition">Cart</li>
+                    <li onClick={onOpenCartModal} className="cursor-pointer hover:text-gray-400 transition">Cart</li>
                 </ul>
             </div>
         </div>
