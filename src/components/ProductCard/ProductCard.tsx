@@ -10,11 +10,15 @@ const ProductCard = () => {
             
             <div className="relative group">
             <img className="w-75 rounded-2xl" src="/images/images (1).jpg" alt="" />
-              <div className="absolute inset-0 bg-gray-500/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gray-800/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
 
             </div>
              
               <img src="/images/unlike.png" alt="" className="absolute top-5 right-5 w-9 cursor-pointer"/>
+
+              <button>
+              <img src="/images/basket.png" alt="" className="absolute top-33 right-33 w-9 cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity duration-300"/>
+              </button>
        </div>
 
 

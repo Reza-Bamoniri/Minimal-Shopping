@@ -28,7 +28,7 @@ const Home = () => {
               
               <Link to="/products">
 
-             <button className="bg-orange-400 px-10 py-2 text-amber-50 rounded-3xl mb-7 cursor-pointer hover:font-bold hover:bg-orange-500" >more products ...</button>
+             <button className="bg-orange-400 px-10 py-2 text-amber-50 rounded-3xl mb-7 cursor-pointer hover:font-bold hover:bg-orange-500 transition" >more products ...</button>
               
               </Link>
 
