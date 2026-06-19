@@ -14,7 +14,7 @@ body{
 
 
 .container{
-    width: 1426px;
+    max-width: 1426px;
     margin: 0 auto;
     background-color: #e7e7e7a8;
     color: rgba(0, 0, 0, 0.712);
