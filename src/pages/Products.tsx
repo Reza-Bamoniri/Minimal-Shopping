@@ -1,5 +1,6 @@
 import { useOutletContext } from "react-router-dom"
 import ProductCard from "../components/ProductCard/ProductCard"
+import LoadingScreen from "../components/LoadingScreen/LoadingScreen"
 import useProducts from "../hooks/useProducts"
 import type { Product } from "../types"
 
@@ -8,11 +9,10 @@ interface LayoutContext {
 }
 
 const Products = () => {
-  const { products, loading, error } = useProducts()
+  const { products, loading, error, retry } = useProducts()
   const { onOpenSidebar } = useOutletContext<LayoutContext>()
 
-  if (loading) return <p className="text-center mt-10">Loading...</p>
-  if (error) return <p className="text-center text-red-500">{error}</p>
+  if (loading || error) return <LoadingScreen error={error} onRetry={retry} />
 
   return (
     <>

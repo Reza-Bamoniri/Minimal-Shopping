@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
-import { createContext, useState, useContext, useEffect } from "react";
+import { createContext, useState, useEffect } from "react";
 import type { CartItem, Product } from "../types/index.ts";
-
 
 interface CartContextType {
   cartItems: CartItem[];
@@ -15,13 +14,11 @@ interface CartContextType {
   isInWishlist: (id: number) => boolean;
 }
 
-
-const CartContext = createContext<CartContextType | undefined>(undefined);
-
+export const CartContext = createContext<CartContextType | undefined>(
+  undefined,
+);
 
 export function CartProvider({ children }: { children: ReactNode }) {
-
-  
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
     const saved = localStorage.getItem("cartItems");
     return saved ? JSON.parse(saved) : [];
@@ -32,16 +29,13 @@ export function CartProvider({ children }: { children: ReactNode }) {
     return saved ? JSON.parse(saved) : [];
   });
 
-  
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
 
-  
   useEffect(() => {
     localStorage.setItem("wishlistItems", JSON.stringify(wishlistItems));
   }, [wishlistItems]);
-
 
   const addToCart = (product: Product) => {
     setCartItems((prev) => {
@@ -50,7 +44,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
         return prev.map((item) =>
           item.id === product.id
             ? { ...item, quantity: item.quantity + 1 }
-            : item
+            : item,
         );
       }
       return [...prev, { ...product, quantity: 1 }];
@@ -64,8 +58,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const increaseQuantity = (id: number) => {
     setCartItems((prev) =>
       prev.map((item) =>
-        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
-      )
+        item.id === id ? { ...item, quantity: item.quantity + 1 } : item,
+      ),
     );
   };
 
@@ -76,7 +70,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
         return prev.filter((i) => i.id !== id);
       }
       return prev.map((i) =>
-        i.id === id ? { ...i, quantity: i.quantity - 1 } : i
+        i.id === id ? { ...i, quantity: i.quantity - 1 } : i,
       );
     });
   };
@@ -85,12 +79,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const toggleWishlist = (id: number) => {
     setWishlistItems((prev) =>
-      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id],
     );
   };
 
   const isInWishlist = (id: number) => wishlistItems.includes(id);
-
 
   return (
     <CartContext.Provider
@@ -103,19 +96,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
         totalItems,
         wishlistItems,
         toggleWishlist,
-        isInWishlist
+        isInWishlist,
       }}
     >
       {children}
     </CartContext.Provider>
   );
-}
-
-
-export function useCart() {
-  const context = useContext(CartContext);
-  if (!context) {
-    throw new Error("useCart must be used inside CartProvider");
-  }
-  return context;
 }
