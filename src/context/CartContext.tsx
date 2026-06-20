@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { createContext, useState, useContext } from "react";
 import type { CartItem, Product } from "../types/index.ts";
 
-// --- شکل Context ---
+
 interface CartContextType {
   cartItems: CartItem[];
   addToCart: (product: Product) => void;
@@ -10,38 +10,41 @@ interface CartContextType {
   increaseQuantity: (id: number) => void;
   decreaseQuantity: (id: number) => void;
   totalItems: number;
+  wishlistItems: number[]; 
+toggleWishlist: (id: number) => void;
+isInWishlist: (id: number) => boolean;
 }
 
-// --- ساخت Context ---
+
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-// --- Provider: دور همه صفحه‌ها میپیچه ---
+
 export function CartProvider({ children }: { children: ReactNode }) {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
-  // اضافه کردن به سبد
+  
   const addToCart = (product: Product) => {
     setCartItems((prev) => {
       const exists = prev.find((item) => item.id === product.id);
       if (exists) {
-        // اگه قبلاً بوده، فقط تعدادش رو زیاد کن
+        
         return prev.map((item) =>
           item.id === product.id
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
       }
-      // اگه نبوده، با تعداد ۱ اضافه کن
+      
       return [...prev, { ...product, quantity: 1 }];
     });
   };
 
-  // حذف کامل از سبد
+  
   const removeFromCart = (id: number) => {
     setCartItems((prev) => prev.filter((item) => item.id !== id));
   };
 
-  // افزایش تعداد
+
   const increaseQuantity = (id: number) => {
     setCartItems((prev) =>
       prev.map((item) =>
@@ -50,7 +53,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     );
   };
 
-  // کاهش تعداد - اگه به ۰ رسید، از سبد حذف میشه
+  
   const decreaseQuantity = (id: number) => {
     setCartItems((prev) => {
       const item = prev.find((i) => i.id === id);
@@ -63,8 +66,25 @@ export function CartProvider({ children }: { children: ReactNode }) {
     });
   };
 
-  // تعداد کل آیتم‌های سبد
+  
   const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+
+
+
+
+  const [wishlistItems, setWishlistItems] = useState<number[]>([]);
+
+const toggleWishlist = (id: number) => {
+  setWishlistItems((prev) =>
+    prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
+  );
+};
+
+const isInWishlist = (id: number) => wishlistItems.includes(id);
+
+
+
+
 
   return (
     <CartContext.Provider
@@ -75,14 +95,20 @@ export function CartProvider({ children }: { children: ReactNode }) {
         increaseQuantity,
         decreaseQuantity,
         totalItems,
+        wishlistItems,
+        toggleWishlist,
+         isInWishlist
       }}
     >
       {children}
     </CartContext.Provider>
   );
+
+
+
 }
 
-// --- Hook: توی هر کامپوننتی باهاش به سبد دسترسی داری ---
+
 export function useCart() {
   const context = useContext(CartContext);
   if (!context) {

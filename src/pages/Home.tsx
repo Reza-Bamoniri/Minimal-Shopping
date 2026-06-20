@@ -4,7 +4,7 @@ import ProductCard from "../components/ProductCard/ProductCard"
 import useProducts from "../hooks/useProducts"
 import type { Product } from "../types"
 
-// تایپ context که از Layout میاد
+
 interface LayoutContext {
   onOpenSidebar: (product: Product) => void
 }
@@ -13,7 +13,7 @@ const Home = () => {
   const { products, loading, error } = useProducts()
   const { onOpenSidebar } = useOutletContext<LayoutContext>()
 
-  if (loading) return <p className="text-center mt-10">در حال بارگذاری...</p>
+  if (loading) return <p className="text-center mt-10">Loading...</p>
   if (error) return <p className="text-center text-red-500">{error}</p>
 
   return (
@@ -22,7 +22,7 @@ const Home = () => {
       <div className="">
         <div className="container pt-22.5">
           <div className="grid grid-cols-4 justify-items-center">
-            {/* فقط ۸ تا اول رو نشون میدیم */}
+            
             {products.slice(0, 8).map((product) => (
               <ProductCard
                 key={product.id}

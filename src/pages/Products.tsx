@@ -11,7 +11,7 @@ const Products = () => {
   const { products, loading, error } = useProducts()
   const { onOpenSidebar } = useOutletContext<LayoutContext>()
 
-  if (loading) return <p className="text-center mt-10">در حال بارگذاری...</p>
+  if (loading) return <p className="text-center mt-10">Loading...</p>
   if (error) return <p className="text-center text-red-500">{error}</p>
 
   return (
