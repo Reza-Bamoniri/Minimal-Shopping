@@ -62,7 +62,7 @@ className="bg-white py-5 px-6 fixed top-4 bottom-4 rounded-2xl shadow-xl z-50"
           <div>
             <div className="relative group">
               <img
-                className="w-55 h-60 rounded-2xl"
+                className="w-55 h-60 max-lg:w-45 max-lg:h-35 rounded-2xl"
                 src={product?.image || "/images/images (1).jpg"}
                 alt={product?.title || ""}
               />
@@ -114,7 +114,7 @@ className="bg-white py-5 px-6 fixed top-4 bottom-4 rounded-2xl shadow-xl z-50"
             <button
               key={size}
               onClick={() => setSelectedSize(size)}
-              className={`w-10 h-10 border rounded-lg cursor-pointer transition-colors duration-200 ${
+              className={`w-9 h-9 border rounded-lg cursor-pointer transition-colors duration-200 ${
                 selectedSize === size
                   ? "bg-orange-400 border-orange-400 text-white"
                   : "border-orange-400 text-orange-500 hover:border-orange-400 hover:text-orange-400"
@@ -153,7 +153,7 @@ className="bg-white py-5 px-6 fixed top-4 bottom-4 rounded-2xl shadow-xl z-50"
           </div>
         </div>
 
-        <div className="w-full mt-15 flex justify-between items-center relative">
+        <div className="w-full mt-15 max-lg:mt-8 flex justify-between items-center relative">
           <div className="flex items-center gap-3">
             <button
               onClick={handleAddToCart}
