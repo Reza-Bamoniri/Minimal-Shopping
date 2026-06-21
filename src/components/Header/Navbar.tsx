@@ -39,7 +39,7 @@ const NavBar = ({ onOpenCartModal }: Props) => {
 
             
             <div className="flex items-center gap-7 ml-7.5 w-full justify-center md:w-auto md:justify-start md:flex-none">
-              <img src="/images/logo.png" alt="" />
+              <img className="max-md:hidden" src="/images/logo.png" alt="" />
               <p className="bg-linear-to-r from-orange-500 to-red-500 bg-clip-text text-transparent text-[30px] font-medium">
                 Minimal Shopping
               </p>

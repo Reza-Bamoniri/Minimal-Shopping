@@ -14,11 +14,11 @@ const ProductCard = ({ product, onOpenSidebar }: Props) => {
 
   return (
     <>
-      <div className="w-full sm:w-60 mb-18.75 relative group">
+      <div className="w-full sm:w-60 mb-18.75 relative">
         <div className="h-60">
           <div className="relative group h-60">
             <img
-              className="w-full sm:w-60 h-60 rounded-2xl object-cover"
+              className="w-full sm:w-60 h-60 rounded-2xl "
               src={product.image}
               alt={product.title}
             />
@@ -74,7 +74,7 @@ const ProductCard = ({ product, onOpenSidebar }: Props) => {
 
         <div className="mt-3.25">
           <div className="flex justify-between">
-            <p className="text-black cursor-pointer truncate">{product.title}</p>
+            <p onClick={() => onOpenSidebar(product)} className="text-black cursor-pointer truncate">{product.title}</p>
             <span className="font-bold">${product.price}</span>
           </div>
           <p className="text-black">{product.category}</p>
