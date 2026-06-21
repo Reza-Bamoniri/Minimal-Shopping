@@ -21,7 +21,7 @@ const NavBar = ({ onOpenCartModal }: Props) => {
             </p>
             <p>+91 (720) 090 1896</p>
           </div>
-          <p className="ml-141">Get 50% Off on Selected Items &nbsp; | &nbsp; Shop Now</p>
+          <p className="md:ml-50 2xl:ml-146 lg:ml-100 ">Get 50% Off on Selected Items &nbsp; | &nbsp; Shop Now</p>
         </div>
 
         <div className="container pt-5">

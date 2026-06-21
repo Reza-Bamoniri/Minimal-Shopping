@@ -62,7 +62,7 @@ className="bg-white py-5 px-6 fixed top-4 bottom-4 rounded-2xl shadow-xl z-50"
           <div>
             <div className="relative group">
               <img
-                className="w-55 h-60 max-lg:w-45 max-lg:h-35 rounded-2xl"
+                className="2xl:w-55 2xl:h-60 lg:w-45 lg:h-35 rounded-2xl"
                 src={product?.image || "/images/images (1).jpg"}
                 alt={product?.title || ""}
               />
@@ -74,7 +74,7 @@ className="bg-white py-5 px-6 fixed top-4 bottom-4 rounded-2xl shadow-xl z-50"
               <p className="text-black cursor-pointer truncate">
                 {product?.title || "Rounded neck - T shirt"}
               </p>
-              <span className="font-bold">
+              <span className="font-bold text-gray-700">
                 {product ? `$${product.price}` : "85$"}
               </span>
             </div>
@@ -125,7 +125,7 @@ className="bg-white py-5 px-6 fixed top-4 bottom-4 rounded-2xl shadow-xl z-50"
           ))}
         </div>
 
-        <div className="flex-1 flex flex-col justify-end mt-36">
+        <div className="flex-1 flex flex-col justify-end 2xl:mt-36 lg:mt-33">
           <div className="space-y-8">
             <div className="flex gap-4 items-center">
               <span>
@@ -153,7 +153,7 @@ className="bg-white py-5 px-6 fixed top-4 bottom-4 rounded-2xl shadow-xl z-50"
           </div>
         </div>
 
-        <div className="w-full mt-15 max-lg:mt-8 flex justify-between items-center relative">
+        <div className="w-full 2xl:mt-15 lg:mt-10 flex justify-between items-center relative">
           <div className="flex items-center gap-3">
             <button
               onClick={handleAddToCart}
