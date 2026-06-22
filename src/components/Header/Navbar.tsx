@@ -13,7 +13,7 @@ const NavBar = ({ onOpenCartModal }: Props) => {
       <div>
         
         <div className="bg-orange-400 text-white hidden md:flex items-center p-5">
-          <div className="flex items-center 2xl:gap-140 xl:gap-110 lg:gap-70 md:gap-50 pl-5">
+          <div className="flex items-center 2xl:gap-[62vh] xl:gap-110 lg:gap-70 md:gap-50 pl-5">
             <div className="flex items-center gap-3">
             <p>
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
