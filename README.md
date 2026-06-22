@@ -1,73 +1,77 @@
-# React + TypeScript + Vite
+# 🛒 minimal-shopping
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimal e-commerce web application built with **React + TypeScript + Tailwind CSS + Vite**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+# 🚀 Live Demo
 
-## React Compiler
+## 🔗 https://minimal-shopping-sable.vercel.app
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🖼️ Preview
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+<p align="center">
+ <img src="./src/assets/screencapture-minimal-shopping.png" alt="preview" width="800px" />
+</p>
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 🧰 Tech Stack
+
+- ⚛️ React
+- 🟦 TypeScript
+- ⚡ Vite
+- 🎨 Tailwind CSS
+- 🌐 React Router DOM
+- 📦 NPM
+
+---
+
+## 📦 Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Reza-Bamoniri/Minimal-Shopping.git
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+# ▶️ Running the Project
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Start the development server:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+cd minimal-shopping
+
+
+npm install
+
+
+npm run dev
+```
+## Build for production:
+```
+npm run build
+
+npm run preview
+```
+
+
+# ✨Features
+- Minimal and modern UI
+- Fully responsive design
+- Product listing pages
+- React Router navigation
+- Clean and scalable structure
+- Built with TypeScript for type safety
+
+
+
+---
+
+# 🌐 Deployment
+
+### This project is deployed on Vercel.
